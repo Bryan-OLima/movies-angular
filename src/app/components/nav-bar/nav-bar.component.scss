@@ -1,0 +1,81 @@
+@import './../../../assets/css/animations.scss';
+
+:host {
+    //mobile first
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        
+        padding: 0 3rem;
+        height: 50px;
+        
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .logo {
+        display: none;
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    a, a:visited {
+        margin: 0 10px;
+        
+        text-decoration: none;
+        font-size: 1rem;
+        color: #FFF;
+    }
+
+    button {
+        height: 50px;
+        background-color: transparent;
+        border: none;
+
+        cursor: pointer;
+    }
+
+    .nav__menu {
+       display: flex;
+
+        .nav__link {
+            list-style: none;
+            margin: 0 10vw;
+        }
+    }
+
+    //small screen
+    @media screen and (min-width: 576px){
+        nav {
+            justify-content: space-between;
+            padding: 0 3rem;
+        }
+
+        .logo {
+            display: block;
+        }
+
+        .nav__menu {
+            display: flex;
+     
+             .nav__link {
+                 list-style: none;
+                 margin: 0 2vw;
+             }
+         }
+
+    }
+
+    //medium screen
+    @media screen and (min-width: 768px){
+       
+    }
+
+    //large screen
+    @media screen and (min-width: 992px){
+    
+    }
+    
+   
+}
