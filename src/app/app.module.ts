@@ -18,6 +18,7 @@ import { MovieHighlightComponent } from './components/movie-highlight/movie-high
 import { MovieSmallCardComponent } from './components/movie-small-card/movie-small-card.component';
 import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { SearchPageComponent } from './pages/search-page/search-page.component';
     MovieSmallCardComponent,
     ConfirmationDialogComponent,
     SearchPageComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

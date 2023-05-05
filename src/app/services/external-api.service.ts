@@ -16,7 +16,7 @@ export class ExternalApiService {
   constructor(private _http:HttpClient){}
 
   getMovies(search:string): Observable<Movie>{
-     // https://api.themoviedb.org/3/search/movie?api_key=b431800d46a957987d0136e30fe42f05&language=pt-BR&query=avatar&page=1&include_adult=false
+    // https://api.themoviedb.org/3/search/movie?api_key=b431800d46a957987d0136e30fe42f05&language=pt-BR&query=avatar&page=1&include_adult=false
     // https://api.themoviedb.org/3/search/multi?api_key=b431800d46a957987d0136e30fe42f05&language=pt-BR&query=The%20Office&page=1&include_adult=false
     return this._http.get<Movie>(`${this._apiUrl}&language=pt-BR&query=${search}&page=1&include_adult=false`);
   }
