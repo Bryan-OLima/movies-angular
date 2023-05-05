@@ -1,5 +1,7 @@
 @import './assets/css/configuration.scss';
+@import './assets/css/colors.scss';
+
 body {
-    background-color: #110907;
-    color: #FFF;
+    background-color: $background-color;
+    color: $font-color;
 }
