@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+import { SearchPageComponent } from './pages/search-page/search-page.component';
 
 const title: string = 'The Movies'
 const routes: Routes = [
@@ -12,12 +13,17 @@ const routes: Routes = [
     title: `${title} - Home`
   },
   {
+    path: 'pesquisar',
+    component: SearchPageComponent,
+    title: `${title} - Pesquisar`
+  },
+  {
     path: 'sobre',
     component: AboutPageComponent,
     title: `${title} - Sobre`
   },
   {
-    path: '',
+    path: '**',
     component: NotFoundPageComponent,
     title: `${title} - 404`
   }

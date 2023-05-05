@@ -17,6 +17,7 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
 import { MovieHighlightComponent } from './components/movie-highlight/movie-highlight.component';
 import { MovieSmallCardComponent } from './components/movie-small-card/movie-small-card.component';
 import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
+import { SearchPageComponent } from './pages/search-page/search-page.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ConfirmationDialogComponent } from './components/confirmation-dialog/co
     NotFoundPageComponent,
     MovieHighlightComponent,
     MovieSmallCardComponent,
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
+    SearchPageComponent,
   ],
   imports: [
     BrowserModule,

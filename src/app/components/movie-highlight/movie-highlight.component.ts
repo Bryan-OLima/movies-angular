@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { API_KEY } from '../../../../.config/config.env';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-movie-highlight',
+  selector: 'movie-highlight',
   templateUrl: './movie-highlight.component.html',
   styleUrls: ['./movie-highlight.component.scss']
 })
