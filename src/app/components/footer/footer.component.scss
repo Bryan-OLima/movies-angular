@@ -3,7 +3,10 @@
 :host {
     //mobile first
     width: 100vw;
-    
+
+    position: absolute;
+    bottom: 0;
+
     nav {
         display: flex;
         flex-direction: row;
@@ -15,12 +18,6 @@
         width: 100%;
         
         background-color: rgba(0, 0, 0, 0.5);
-    }
-
-    .logo {
-        display: none;
-        font-weight: bold;
-        font-size: 1.2rem;
     }
 
     a, a:visited {
@@ -39,6 +36,9 @@
 
     .footer {
        display: flex;
+
+       align-items: center;
+       justify-content: center;
 
         .footer__link {
             list-style: none;
