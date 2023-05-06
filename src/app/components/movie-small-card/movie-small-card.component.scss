@@ -37,14 +37,12 @@
 
         .card__like {
             position: absolute;
-            bottom: 0;
-            height: 2rem;
-            width: 2rem;
-            z-index: 10;
-
+            margin: 360px 0 0 220px;
+            height: 2.15rem;
+            width: 2.15rem;
+            
             font-size: 2rem;
 
-            margin: 0 -210px 40px 0;
             cursor: pointer;
         }
 
@@ -66,7 +64,7 @@
             width: 42px;
             height: 42px;
 
-            top: 35px;
+            margin-top: 10px;
             left: 40px;
 
             border-radius: 50%;
@@ -75,6 +73,7 @@
 
         .card__image {
             height: 100%;
+            width: 269px;
             border-radius: 10px;
             
             box-shadow: 0 0 5px 1px rgba(0, 0, 0, .8);

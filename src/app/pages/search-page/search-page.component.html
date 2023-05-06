@@ -14,26 +14,27 @@
 </div>
 <main class="card__list zoomIn">
 
-    <small-card></small-card>
     <!-- {{searchList  | json}} -->
-<!-- <div *ngFor="let media of searchList">
-
-    <small-card
-        *ngIf="media.original_title"
-        [name]="media.original_title"
-        [poster]="media.poster_path"
-        [id]="media.id"
-    >
-    </small-card>
-    <small-card
-        *ngIf="media.original_name"
-        [name]="media.original_name"
-        [poster]="media.poster_path"
-        [id]="media.id"
-    >
-    </small-card>
-    <hr>
-</div> -->
+<div *ngFor="let media of searchList" class="card">
+    <div *ngIf="searchList.length > 0" class="card__list">  
+        <small-card
+            *ngIf="media.original_title && media.poster_path "
+            [name]="media.original_title"
+            [poster]="media.poster_path"
+            [id]="media.id"
+        >
+        </small-card>
+        <small-card
+            *ngIf="media.original_name  && media.poster_path"
+            [name]="media.original_name"
+            [poster]="media.poster_path"
+            [type]="media"
+            [id]="media.id"
+            [rating]="media.vote_average"
+        >
+        </small-card>
+    </div>
+</div>
 
  <!-- 
     a movie has to be 
