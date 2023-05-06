@@ -1,13 +1,11 @@
 @import '../../../assets/css/animations.scss';
 
 :host {
-    display: flex;
-    flex-direction: column;
-
     .search__area {
         display: flex;
         flex-direction: row;
         align-items: center;
+        align-content: center;
 
         width: 100%;
 
@@ -49,11 +47,28 @@
         transition: 2000ms;
     }
 
-    .card {
+    .card__list {
+        width: 100%;
+        margin: auto;
+        padding-bottom: 20px;
+        padding-right: 0;
+        display: flex;
+        justify-content: center;
+    }
 
-        .card__list {
-            display: flex;
-            flex-direction: row;
+    .card {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        column-gap: 1rem;
+        width: 100%;
+
+        margin: 20px 0 70px 0;
+        // flex-direction: row;
+        // flex-wrap: wrap;
+        // align-items: center;
+        // justify-content: center;
+        .card__small{
+            width: 100%;
         }
     }
 
@@ -63,23 +78,29 @@
 
     //small screen
     @media screen and (min-width: 576px){
-        .card__list {
-            grid-template-columns: 1fr 1fr;
+        .card {
+            grid-template-columns: 1fr;
         }
     }
 
     //medium screen
-    @media screen and (min-width: 768px){
-        .card__list {
-            grid-template-columns: 1fr 1fr 1fr;
+    @media screen and (min-width: 753px){
+        .card {
+            grid-template-columns: 1fr 1fr;
         }
     }
 
     //large screen
-    @media screen and (min-width: 992px){
-        .card__list {
-            grid-template-columns: 1fr 1fr 1fr 1fr;
+    @media screen and (min-width: 1130px){
+        .card {
+            grid-template-columns: 1fr 1fr 1fr;
         }
     }
 
+    //extra large screen
+    @media screen and (min-width: 1505px){
+        .card {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+    }
 }

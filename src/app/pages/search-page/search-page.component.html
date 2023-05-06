@@ -12,37 +12,32 @@
         placeholder="Pesquise aqui um filme ou série"
     />
 </div>
-<main class="card__list zoomIn">
-
+<div class="card__list zoomIn">
     <!-- {{searchList  | json}} -->
-<div *ngFor="let media of searchList" class="card">
-    <div *ngIf="searchList.length > 0" class="card__list">  
-        <small-card
-            *ngIf="media.original_title && media.poster_path "
-            [name]="media.original_title"
-            [poster]="media.poster_path"
-            [id]="media.id"
-        >
-        </small-card>
-        <small-card
-            *ngIf="media.original_name  && media.poster_path"
-            [name]="media.original_name"
-            [poster]="media.poster_path"
-            [type]="media"
-            [id]="media.id"
-            [rating]="media.vote_average"
-        >
-        </small-card>
+    <div *ngIf="searchList.length > 0" class="card">  
+        <div *ngFor="let media of searchList" class="card__small">
+            <small-card
+                *ngIf="media.original_title && media.poster_path "
+                [name]="media.original_title"
+                [poster]="media.poster_path"
+                [id]="media.id"
+                [type]="media.type"
+                [rating]="media.vote_average"
+
+            >
+            </small-card>
+            <small-card
+                *ngIf="media.original_name  && media.poster_path"
+                [name]="media.original_name"
+                [poster]="media.poster_path"
+                [type]="media.type"
+                [id]="media.id"
+                [rating]="media.vote_average"
+
+            >
+            </small-card>
+        </div>
     </div>
 </div>
 
- <!-- 
-    a movie has to be 
-
-    id: number,
-    name: string,
-    type: string
-}
-  -->
-</main>
-<app-footer></app-footer>
+<app-footer class="footer"></app-footer>

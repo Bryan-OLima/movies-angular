@@ -6,13 +6,13 @@
     justify-content: center;
 
     height: 400px;
-    width: 266px;
+    // width: 266px;
 
     margin: 30px;
 
     .card {
         height: 100%;
-        width: 100%;
+        width: 300px;
 
         color: $font-color;
 
@@ -37,17 +37,21 @@
 
         .card__like {
             position: absolute;
-            margin: 360px 0 0 220px;
-            height: 2.15rem;
-            width: 2.15rem;
-            
+            margin: 355px 0 0 240px;
+            height: 2.2rem;
+            width: 2.2rem;
+            -webkit-filter: drop-shadow(1px 1px 1px black)
+            drop-shadow(-1px -1px 1px black);
+            filter: drop-shadow(1px 1px 1px black) 
+            drop-shadow(-1px -1px 1px black);
             font-size: 2rem;
 
+            font-weight: bold;
             cursor: pointer;
         }
 
         .card__like:hover {
-            text-shadow: 1px 1px 5px rgba(255, 255, 255, 1);
+            text-shadow: 1px 2px 5px rgba(255, 255, 255, 1);
         }
 
         .card__rating {
@@ -55,25 +59,23 @@
             position: absolute;
             align-items: center;
             justify-content: center;
-            
-            text-align: center;
-            font-size: 1.1rem;
+
+            font-size: 1rem;
             font-weight: bold;
             color: #000;
 
-            width: 42px;
-            height: 42px;
+            width: 2.89rem;
+            height: 2.89rem;
+            margin: -13px 273px 0 0;
 
-            margin-top: 10px;
-            left: 40px;
-
+            box-shadow: 0 0 8px 2px #000;
             border-radius: 50%;
-            background-color: $rating;
+            background-color: #F6BE27;
         }
 
         .card__image {
-            height: 100%;
-            width: 269px;
+            height: 400px;
+            width: 300px;
             border-radius: 10px;
             
             box-shadow: 0 0 5px 1px rgba(0, 0, 0, .8);

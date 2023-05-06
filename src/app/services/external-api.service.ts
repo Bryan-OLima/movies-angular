@@ -11,6 +11,8 @@ import { API_KEY } from '.config/config.env';
 export class ExternalApiService {
 
   private _apiUrl: string = `https://api.themoviedb.org/3/search/multi?api_key=${API_KEY}`;
+  private _apiUrlTrending: string = `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`;
+  // https://api.themoviedb.org/3/trending/all/day?api_key=b431800d46a957987d0136e30fe42f05
   private _apiUrlById: string = 'https://api.themoviedb.org/3';
 
   constructor(private _http:HttpClient){}
@@ -27,6 +29,10 @@ export class ExternalApiService {
 
   getTvShowById(id:number): Observable<Movie>{
     return this._http.get<Movie>(`${this._apiUrlById}/tv/${id}?api_key=${API_KEY}&language=pt-BR`);
+  }
+
+  getAllTrending(): Observable<any>{
+    return this._http.get<any>(`${this._apiUrlTrending}`);
   }
   // trailer end point 
   // https://api.themoviedb.org/3/movie/47931/videos?api_key=b431800d46a957987d0136e30fe42f05&language=pt-BR

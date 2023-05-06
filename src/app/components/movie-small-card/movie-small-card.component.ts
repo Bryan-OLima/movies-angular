@@ -17,12 +17,10 @@ export class MovieSmallCardComponent implements OnChanges {
 
   ngOnChanges(){
     console.log(this.poster, this.name, this.id, this.rating, this.type);
-    this.rating = Number(this.rating);
+    this.rating = Number(this.rating).toFixed(1);
   }
 
-
-
-  testFunction(texto: string){
-    console.log(texto);
+  testFunction(id: string, name: string){
+    console.log(`filme adicionado á lista: ${id}: ${name}`);
   }
 }
