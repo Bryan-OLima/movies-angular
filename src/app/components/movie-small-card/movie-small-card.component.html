@@ -1,0 +1,30 @@
+<!-- <div class="card">
+    <img src="{{posterLink + poster}}">
+    {{name}}
+    {{id}}
+</div> -->
+
+<div class="card">
+    <img 
+        src="https://image.tmdb.org/t/p/w500/85ivt7lJm3J5Mqybdh59m09eksV.jpg" 
+        alt="AVATAR 76600"
+        class="card__image"
+    />
+    <span class="card__title">
+        <a routerLink="">
+            Dungeons & Dragons: Honra Entre Rebeldes
+        </a>
+    </span>
+    <!-- adicionar uma condicional caso o filme ja exista na lista o card vir com o coração cheio. -->
+    <mat-icon 
+        class="card__like"
+        (click)="testFunction('clickou')"
+    >
+        favorite_border
+    </mat-icon>
+    <div class="card__rating">
+        10
+    </div>
+</div>
+
+

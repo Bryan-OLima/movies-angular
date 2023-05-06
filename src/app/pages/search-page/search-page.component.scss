@@ -1,0 +1,55 @@
+@import '../../../assets/css/animations.scss';
+
+:host {
+    display: flex;
+    flex-direction: column;
+
+    .search__area {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        width: 100%;
+
+        outline: none;
+        border-bottom: solid 3px gray;
+        border-radius: 20px;
+
+        background-color: #FFF;
+        color: #131313;
+
+        padding: 0 10px 0 0;
+
+        button {
+            background-color: transparent;
+            border: none;
+            height: 100%;
+            margin: 0 0 0 10px;
+
+            cursor: pointer;
+        }
+
+        input {
+            width: 100%;
+            height: 40px;
+
+            text-align: center;
+            font-size: 0.816rem;
+
+            
+            border-color: transparent;
+            outline: none;
+            border-radius: 20px;
+        }
+    }
+
+    .search__area:focus, input:focus {
+        background-color: #FFF;
+        border: none;
+        transition: 2000ms;
+    }
+
+    ::placeholder {
+        color: gray;
+    }
+}

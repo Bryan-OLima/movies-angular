@@ -1,2 +1,47 @@
 <nav-bar></nav-bar>
+<div class="search__area">
+    <button type="button">
+        <mat-icon>
+            search
+        </mat-icon>
+    </button>
+    <input 
+        type="text" 
+        (keyup)="searchMovieOrTv(search.value)"
+        #search 
+        placeholder="Pesquise aqui um filme ou série"
+    />
+</div>
+<main class="card__list zoomIn">
+
+    <small-card></small-card>
+    <!-- {{searchList  | json}} -->
+<!-- <div *ngFor="let media of searchList">
+
+    <small-card
+        *ngIf="media.original_title"
+        [name]="media.original_title"
+        [poster]="media.poster_path"
+        [id]="media.id"
+    >
+    </small-card>
+    <small-card
+        *ngIf="media.original_name"
+        [name]="media.original_name"
+        [poster]="media.poster_path"
+        [id]="media.id"
+    >
+    </small-card>
+    <hr>
+</div> -->
+
+ <!-- 
+    a movie has to be 
+
+    id: number,
+    name: string,
+    type: string
+}
+  -->
+</main>
 <app-footer></app-footer>

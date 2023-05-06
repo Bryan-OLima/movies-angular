@@ -7,6 +7,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+//Angular Material Modules
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 //Components
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
@@ -19,6 +24,8 @@ import { MovieSmallCardComponent } from './components/movie-small-card/movie-sma
 import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { FavoritesPageComponent } from './pages/favorites-page/favorites-page.component';
+
 
 @NgModule({
   declarations: [
@@ -32,11 +39,15 @@ import { FooterComponent } from './components/footer/footer.component';
     ConfirmationDialogComponent,
     SearchPageComponent,
     FooterComponent,
+    FavoritesPageComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,89 @@
+@import '../../../assets/css/colors.scss';
+
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 400px;
+    width: 266px;
+
+    margin: 30px;
+
+    .card {
+        height: 100%;
+        width: 100%;
+
+        color: $font-color;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .card__title {
+            text-align: center;
+            font-size: 1rem;
+            margin: 10px 0; 
+            width: 70%;
+
+            text-shadow: 0 0 2px $font-color;
+            transition: 100ms;
+        }
+
+        .card__title:hover {
+            text-shadow: 0 0 10px $font-color;
+            transition: 400ms;
+        }
+
+        .card__like {
+            position: absolute;
+            bottom: 0;
+            height: 2rem;
+            width: 2rem;
+            z-index: 10;
+
+            font-size: 2rem;
+
+            margin: 0 -210px 40px 0;
+            cursor: pointer;
+        }
+
+        .card__like:hover {
+            text-shadow: 1px 1px 5px rgba(255, 255, 255, 1);
+        }
+
+        .card__rating {
+            display: flex;
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+            
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #000;
+
+            width: 42px;
+            height: 42px;
+
+            top: 35px;
+            left: 40px;
+
+            border-radius: 50%;
+            background-color: $rating;
+        }
+
+        .card__image {
+            height: 100%;
+            border-radius: 10px;
+            
+            box-shadow: 0 0 5px 1px rgba(0, 0, 0, .8);
+            transition: 200ms;
+        }
+
+        .card__image:hover {
+            box-shadow: 0 0 10px 4px rgba(37, 37, 37, 0.8); 
+            transition: 200ms;
+        }
+    }
+}
