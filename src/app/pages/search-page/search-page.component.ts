@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ExternalApiService } from 'src/app/services/external-api.service';
 
 @Component({
@@ -6,26 +6,20 @@ import { ExternalApiService } from 'src/app/services/external-api.service';
   templateUrl: './search-page.component.html',
   styleUrls: ['./search-page.component.scss']
 })
-export class SearchPageComponent implements OnInit, OnChanges {
+export class SearchPageComponent implements OnInit {
   searchList: any[] = [];
 
-  constructor(private externalApi: ExternalApiService) {}
+  constructor(private _externalApi: ExternalApiService){}
 
   ngOnInit(): void {
     this.getInitialData();
-  }
-
-  ngOnChanges(): void {
-    if(this.searchList.length < 1){
-      this.getInitialData();
-    }
   }
 
   searchMovieOrTv(search: string){
     if(!search.trim()){
       this.getInitialData();
     } else {
-      this.externalApi.searchMoviesAndTv(search).subscribe({
+      this._externalApi.searchMoviesAndTv(search).subscribe({
         next: (res: any) => {
          this.searchList = res.results;
         },
@@ -36,7 +30,7 @@ export class SearchPageComponent implements OnInit, OnChanges {
   }
 
   getInitialData(){
-    this.externalApi.getAllTrending().subscribe({
+    this._externalApi.getAllTrending().subscribe({
       next: (res:any) => {
        this.searchList = res.results;
       },

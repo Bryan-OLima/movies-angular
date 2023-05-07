@@ -1,26 +1,22 @@
 <!-- adicionar uma condicional caso o filme ja exista na lista o card vir com o coração cheio. -->
-<!-- <div class="card">
-    <img src="{{posterLink + poster}}">
-    {{name}}
-    {{id}}
-</div> -->
+
 <!-- https://image.tmdb.org/t/p/w500/85ivt7lJm3J5Mqybdh59m09eksV.jpg -->
 
 <div class="card">
-    <img 
-        [src]="posterLink+poster" 
-        [alt]="name+ id"
-        class="card__image"
-    />
+    <a routerLink="">
+        <img 
+            [src]="posterLink+poster" 
+            [alt]="name+ id"
+            class="card__image"
+        />
+    </a>
     <span class="card__title">
-        <a routerLink="">
-            {{name}}
-        </a>
+        {{name}}
     </span>
 
     <mat-icon 
         class="card__like"
-        (click)="testFunction(id, name)"
+        (click)="openAlert(name)"
     >
         favorite_border
     </mat-icon>
