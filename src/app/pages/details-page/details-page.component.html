@@ -27,7 +27,6 @@
 </div>
 
 <div class="media">
-
     <div class="media__header">
         <h1>
             {{ movie?.title }}
@@ -47,9 +46,7 @@
         <span *ngIf="movie?.budget != 0">
             Custo de produção: {{ movie?.budget | currency }}
         </span>
-        <a *ngIf="youtubeKey != undefined" [attr.href]="'https://www.youtube.com/watch?v='+youtubeKey" target="_blank">
-            Trailer 
-        </a> 
+
     </div>
 
     <div class="media__description">
@@ -57,79 +54,31 @@
     </div>
 
     <div class="media__socials">
-            <span>
-                like
-            </span>
-            <span>
-                twitter
-            </span>
-            <span>
-                instagram
-            </span>
+        <div class="media__like">
+            <button 
+                class="bg"
+                (click)="openAlert(movie.title)"
+            > 
+                <mat-icon class="like">
+                    favorite_border
+                </mat-icon>
+                <span>
+                    favoritar
+                </span>
+           </button>
+        </div>
+
+        <div>
+            <a class="media__trailer" *ngIf="youtubeKey != undefined" [attr.href]="'https://www.youtube.com/watch?v='+youtubeKey" target="_blank">
+                <button class="bg">
+                    <mat-icon class="play">
+                        play_circle_outline
+                    </mat-icon>
+                    <span>
+                        trailer
+                    </span>
+                </button>
+            </a> 
+        </div>
     </div>
 </div>
-
-<!-- 
-<div class="media__genres" *ngFor="let genre of movie.genres">
-    <button>
-        Aventura
-    </button>
-    <button>
-        Fantasia
-    </button>
-    <button>
-        Comédia
-    </button>
-</div>
-
-<div class="media">
-
-    <div class="media__header">
-        <h1>
-            Dungeons & Dragons: Honra entre Rebeldes
-        </h1>    
-
-        <span class="tagline">
-            Não é necessário experiência.
-        </span>
-    </div>
-    <div class="media__rating">
-        <span>
-           Duração: 70min
-        </span>
-        <span>
-            Nota: 7.5/10
-        </span>
-        <span>
-            custo
-        </span>
-        <span>
-            trailer>  
-        </span>
-    </div>
-
-    <div class="media__description">
-        Em um mundo repleto de dragões, elfos, anões,
-        orcs e outras criaturas fantásticas, 
-        sobreviver é sempre um grande desafio. 
-        Raven Hightower é um humano que se arrisca 
-        entre os lugares mais perigosos e misteriosos desse universo, 
-        sempre com a ajuda de outros aventureiros que, assim como ele, 
-        estão dispostos a combater o mal e a derrotar as mais terríveis 
-        criaturas que surgem em seus caminhos.
-    </div>
-
-    <div class="media__socials">
-            <span>
-                like
-            </span>
-            <span>
-                twitter
-            </span>
-            <span>
-                instagram
-            </span>
-    </div>
-</div>
- -->
-

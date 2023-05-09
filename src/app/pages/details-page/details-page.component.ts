@@ -1,5 +1,7 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
+import { AlertOkComponent } from 'src/app/components/alerts/alert-ok/alert-ok.component';
 import { ExternalApiService } from 'src/app/services/external-api.service';
 
 @Component({
@@ -8,22 +10,21 @@ import { ExternalApiService } from 'src/app/services/external-api.service';
   styleUrls: ['./details-page.component.scss']
 })
 export class DetailsPageComponent implements OnInit{
-  mobile = false;
+    
+  @HostBinding('style.background-image')
+  bgImage: string = '';
+
   movie: any;
   youtubeKey: string = '';
 
   constructor(
+    private _snackBar: MatSnackBar,
     private _activatedRoute: ActivatedRoute,
     private _externalApi: ExternalApiService,
   ) {}
 
-  @HostBinding('style.background-image')
-  
-  bgImage: string = '';
-
   ngOnInit(): void {
     this.getMovie();
-
   }
 
   getMovie(){
@@ -36,18 +37,13 @@ export class DetailsPageComponent implements OnInit{
         this.getYoutubeKey(id);
         this.movie = res;
         this.bgImage = `linear-gradient(to bottom, rgba(0,0,0, .7), #110907 100%), url('https://image.tmdb.org/t/p/w1920_and_h800_multi_faces${this.movie?.backdrop_path}'`;
-        console.log(this.getYoutubeKey(id));
-        console.log(this.movie);
       },
       error: () => {
         serie.subscribe({
           next: (res) => {
-            console.log(this.movie = res);
             this.getYoutubeKey(id);
             this.movie = res
             this.bgImage = `linear-gradient(to bottom, rgba(0,0,0, .7), #110907 100%), url('https://image.tmdb.org/t/p/w1920_and_h800_multi_faces${this.movie?.backdrop_path}'`;
-            
-           console.log(this.movie);
           },
           error: () => {
             console.log('erro ao pegar filme ou série');
@@ -71,5 +67,9 @@ export class DetailsPageComponent implements OnInit{
         });
       }
     });
+  }
+
+  openAlert(name:string){
+    this._snackBar.openFromComponent(AlertOkComponent, {duration: 2000, data: name});
   }
 }
