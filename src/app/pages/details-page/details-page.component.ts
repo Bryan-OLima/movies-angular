@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ExternalApiService } from 'src/app/services/external-api.service';
 
@@ -17,8 +17,13 @@ export class DetailsPageComponent implements OnInit{
     private _externalApi: ExternalApiService,
   ) {}
 
+  @HostBinding('style.background-image')
+  
+  bgImage: string = '';
+
   ngOnInit(): void {
     this.getMovie();
+
   }
 
   getMovie(){
@@ -30,6 +35,9 @@ export class DetailsPageComponent implements OnInit{
       next: (res) => {
         this.getYoutubeKey(id);
         this.movie = res;
+        this.bgImage = `linear-gradient(to bottom, rgba(0,0,0, .7), #110907 100%), url('https://image.tmdb.org/t/p/w1920_and_h800_multi_faces${this.movie?.backdrop_path}'`;
+        console.log(this.getYoutubeKey(id));
+        console.log(this.movie);
       },
       error: () => {
         serie.subscribe({
@@ -37,6 +45,9 @@ export class DetailsPageComponent implements OnInit{
             console.log(this.movie = res);
             this.getYoutubeKey(id);
             this.movie = res
+            this.bgImage = `linear-gradient(to bottom, rgba(0,0,0, .7), #110907 100%), url('https://image.tmdb.org/t/p/w1920_and_h800_multi_faces${this.movie?.backdrop_path}'`;
+            
+           console.log(this.movie);
           },
           error: () => {
             console.log('erro ao pegar filme ou série');
@@ -48,12 +59,12 @@ export class DetailsPageComponent implements OnInit{
 
   getYoutubeKey(id:number) {
     id = Number(id);
-    this._externalApi.getTvShowTrailer(id).subscribe({
+    this._externalApi.getMovieTrailer(id).subscribe({
       next: (res) => {
-        this.youtubeKey = res.results[0].key;
+        this.youtubeKey = res.results[0]?.key;
       },
       error: () => {
-        this._externalApi.getMovieTrailer(id).subscribe({
+        this._externalApi.getTvShowTrailer(id).subscribe({
           next: (res) => {
             this.youtubeKey = res.results[0].key;
           }
@@ -61,5 +72,4 @@ export class DetailsPageComponent implements OnInit{
       }
     });
   }
-
 }

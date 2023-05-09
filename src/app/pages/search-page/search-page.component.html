@@ -18,7 +18,7 @@
            <div>
                  <small-card
                 *ngIf="media.original_title "
-                [name]="media.original_title"
+                [name]="media.title"
                 [poster]="media.poster_path"
                 [id]="media.id"
                 [type]="media.type"
@@ -27,7 +27,7 @@
             </small-card>
             <small-card
                 *ngIf="media.original_name"
-                [name]="media.original_name"
+                [name]="media.title"
                 [poster]="media.poster_path"
                 [type]="media.type"
                 [id]="media.id"

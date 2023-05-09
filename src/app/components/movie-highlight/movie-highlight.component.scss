@@ -99,9 +99,21 @@
     @media screen and (min-width: 768px){
         .bg {
             background-image: url('https://image.tmdb.org/t/p/w500/e7FzphKs5gzoghDotAEp2FeP46u.jpg');
+            filter: blur(20px);
         }
+
+        .info {
+            span{
+                width: 70%;
+                font-weight: 500;
+                text-shadow: 0 3px 10px black;
+                font-size: 1rem;
+            }
+        }
+
         main {
             margin: 10vh 20% 0 20%;
+            background-color: rgba(255, 255, 255, 0.15);
         }
     }
 
@@ -109,7 +121,17 @@
     @media screen and (min-width: 992px){
         .bg {
             background-image: url('https://image.tmdb.org/t/p/w500/e7FzphKs5gzoghDotAEp2FeP46u.jpg');
-            filter: blur(7px);
+            filter: blur(20px);
+            // filter: brightness(0.5);
+        }
+
+        .info {
+            span{
+                width: 70%;
+                font-weight: 500;
+                text-shadow: 0 3px 10px black;
+                font-size: 1rem;
+            }
         }
 
         main {
