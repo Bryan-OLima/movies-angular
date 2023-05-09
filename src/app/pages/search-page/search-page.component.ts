@@ -8,6 +8,7 @@ import { ExternalApiService } from 'src/app/services/external-api.service';
 })
 export class SearchPageComponent implements OnInit {
   searchList: any[] = [];
+  searchListFiltered: any[] = [];
 
   constructor(private _externalApi: ExternalApiService){}
 

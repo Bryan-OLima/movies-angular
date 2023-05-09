@@ -3,7 +3,7 @@
 <!-- https://image.tmdb.org/t/p/w500/85ivt7lJm3J5Mqybdh59m09eksV.jpg -->
 
 <div class="card">
-    <a routerLink="">
+    <a [routerLink]="['/detalhes', id]">
         <img 
             [src]="posterLink+poster" 
             [alt]="name+ id"

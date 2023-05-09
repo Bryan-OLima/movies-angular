@@ -1,5 +1,5 @@
-import { Component, Input, OnChanges, inject } from '@angular/core';
-import { MatSnackBar, MatSnackBarRef } from '@angular/material/snack-bar';
+import { Component, Input, OnChanges } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { AlertOkComponent } from '../alerts/alert-ok/alert-ok.component';
 
 @Component({
@@ -21,17 +21,21 @@ export class MovieSmallCardComponent implements OnChanges {
 
   ngOnChanges(){
     this.rating = Number(this.rating).toFixed(1);
+    this.verifyData();
   }
 
-  testFunction(id: string, name: string){
-    console.log(`filme adicionado á lista: ${id}: ${name}`);
+  verifyData(){
+    let a = Number(this.rating);
+    if(this.poster == null){
+      this.posterLink = 'https://imdb-api.com/images/original/nopicture.jpg';
+    }
+
+    if(Number.isNaN(a)) {
+      this.rating = 0;
+    }
   }
 
   openAlert(name:string){
     this._snackBar.openFromComponent(AlertOkComponent, {duration: 2000, data: name});
-  }
-
-  testAlert(movie:string){
-    this._snackBar.open(`OPA! O filme ${movie} foi adicionado aos favoritos.`, 'Fechar', {duration: 2000});
   }
 }

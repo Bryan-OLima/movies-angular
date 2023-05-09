@@ -28,6 +28,7 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { FavoritesPageComponent } from './pages/favorites-page/favorites-page.component';
 import { SnackBarService } from './services/snack-bar.service';
+import { DetailsPageComponent } from './pages/details-page/details-page.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { SnackBarService } from './services/snack-bar.service';
     FooterComponent,
     FavoritesPageComponent,
     AlertOkComponent,
+    DetailsPageComponent,
   ],
   imports: [
     BrowserModule,

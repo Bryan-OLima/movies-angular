@@ -1,0 +1,34 @@
+:host {
+    main {
+        width: 100%;
+        
+        .infos__main {
+            position: absolute;
+            top:0;
+            z-index: -100;
+            margin: 20px 20px;
+
+            height: 300px;
+
+            background-repeat: no-repeat;
+            background-clip: padding-box;
+            background-position: center; 
+           
+            box-shadow: 0 0 100px 10px black inset;
+            
+            img {
+                height: 100%;
+                width: 100%;
+
+                aspect-ratio: 16;
+                min-width: 400px;
+
+                background: linear-gradient(to right, rgba(31.5, 31.5, 52.5, 1) calc((50vw - 170px) - 340px), rgba(31.5, 31.5, 52.5, 0.84) 50%, rgba(31.5, 31.5, 52.5, 0.84) 100%);
+                // filter: brightness(.8);
+                // filter: blur(3px);
+                // filter: opacity(.6);
+        }
+        }
+
+    }
+}

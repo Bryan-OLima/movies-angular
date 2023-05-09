@@ -1,4 +1,3 @@
-<nav-bar></nav-bar>
 <div class="search__area">
     <button type="button">
         <mat-icon>
@@ -16,8 +15,9 @@
     <!-- {{searchList  | json}} -->
     <div *ngIf="searchList.length > 0" class="card">  
         <div *ngFor="let media of searchList" class="card__small">
-            <small-card
-                *ngIf="media.original_title && media.poster_path "
+           <div>
+                 <small-card
+                *ngIf="media.original_title "
                 [name]="media.original_title"
                 [poster]="media.poster_path"
                 [id]="media.id"
@@ -26,7 +26,7 @@
             >
             </small-card>
             <small-card
-                *ngIf="media.original_name  && media.poster_path"
+                *ngIf="media.original_name"
                 [name]="media.original_name"
                 [poster]="media.poster_path"
                 [type]="media.type"
@@ -34,7 +34,7 @@
                 [rating]="media.vote_average"
             >
             </small-card>
+           </div>
         </div>
     </div>
 </div>
-<app-footer class="footer"></app-footer>

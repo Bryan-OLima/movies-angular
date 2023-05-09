@@ -5,6 +5,7 @@ import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { FavoritesPageComponent } from './pages/favorites-page/favorites-page.component';
+import { DetailsPageComponent } from './pages/details-page/details-page.component';
 
 const title: string = 'The Movies'
 const routes: Routes = [
@@ -22,6 +23,11 @@ const routes: Routes = [
     path: 'favoritos',
     component: FavoritesPageComponent,
     title: `${title} - Favoritos`
+  },
+  {
+    path: 'detalhes/:id',
+    component: DetailsPageComponent,
+    title: `${title} - Detalhes`
   },
   {
     path: 'sobre',
