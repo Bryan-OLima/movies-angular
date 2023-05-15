@@ -12,19 +12,19 @@ export class InternalApiService {
 
   constructor(private _http:HttpClient){}
 
-  getMovies(): Observable<Movie>{
-    return this._http.get<Movie>(`${this._apiUrl}/api/media`);
+  getFavorites(): Observable<any>{
+    return this._http.get<any>(`${this._apiUrl}/api/media`);
   }
 
-  getMoviesById(id:number): Observable<Movie>{
-    return this._http.get<Movie>(`${this._apiUrl}/media/${id}`);
+  getFavoriteById(id:number): Observable<any>{
+    return this._http.get<any>(`${this._apiUrl}/media/${id}`);
   }
 
-  setMovie(movie: Movie): Observable<Movie>{
+  setFavorite(movie: Movie): Observable<Movie>{
     return this._http.post<Movie>(`${this._apiUrl}/api/media`, movie);
   }
 
-  deleteMovie(id:number): Observable<Movie>{
+  deleteFavorite(id:number): Observable<Movie>{
     return this._http.delete<Movie>(`${this._apiUrl}/api/media/${id}`);
   }
 }

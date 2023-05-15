@@ -2,7 +2,7 @@
 
 <!-- https://image.tmdb.org/t/p/w500/85ivt7lJm3J5Mqybdh59m09eksV.jpg -->
 
-<div class="card">
+<div *ngIf="!isFavorite" class="card">
     <a [routerLink]="['/detalhes', id]">
         <img 
             [src]="posterLink+poster" 
@@ -16,13 +16,36 @@
 
     <mat-icon 
         class="card__like"
-        (click)="openAlert(name)"
+        (click)="okAlert(name)"
     >
         favorite_border
     </mat-icon>
     <div class="card__rating">
         {{ rating }}
     </div>
+</div>
+
+<div *ngIf="isFavorite" class="card">
+    <a [routerLink]="['/detalhes', id]">
+        <img 
+            [src]="posterLink+poster" 
+            [alt]="name+ id"
+            class="card__image"
+        />
+    </a>
+    <span class="card__title">
+        {{name}}
+    </span>
+
+    <mat-icon 
+        class="card__favorite"
+        (click)="deletedAlert(name)"
+    >
+        favorite
+    </mat-icon>
+    <!-- <div class="card__rating">
+        {{ rating }}
+    </div> -->
 </div>
 
 <!-- 

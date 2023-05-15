@@ -1,6 +1,7 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { AlertOkComponent } from '../alerts/alert-ok/alert-ok.component';
+import { AlertOkComponent } from '../.alerts/alert-ok/alert-ok.component';
+import { AlertDeletedComponent } from '../.alerts/alert-deleted/alert-deleted.component';
 
 @Component({
   selector: 'small-card',
@@ -9,11 +10,12 @@ import { AlertOkComponent } from '../alerts/alert-ok/alert-ok.component';
 })
 export class MovieSmallCardComponent implements OnChanges {
 
-  @Input() public poster: any = '';
+  @Input() public poster: string = '';
+  @Input() public isFavorite: boolean = false;
   @Input() public rating: any = '';
-  @Input() public type: any = '';
-  @Input() public name: any = '';
-  @Input() public id: any = '';
+  @Input() public type: string = '';
+  @Input() public name: string = '';
+  @Input() public id: string = '';
   
   public posterLink: string = `https://image.tmdb.org/t/p/w500`;
  
@@ -35,7 +37,11 @@ export class MovieSmallCardComponent implements OnChanges {
     }
   }
 
-  openAlert(name:string){
+  okAlert(name:string){
     this._snackBar.openFromComponent(AlertOkComponent, {duration: 2000, data: name});
+  }
+
+  deletedAlert(name: string){
+    this._snackBar.openFromComponent(AlertDeletedComponent, {duration: 2000, data: name});
   }
 }

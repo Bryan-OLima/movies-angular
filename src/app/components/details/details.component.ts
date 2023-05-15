@@ -1,5 +1,5 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
-import { AlertOkComponent } from '../alerts/alert-ok/alert-ok.component';
+import { AlertOkComponent } from '../.alerts/alert-ok/alert-ok.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { ExternalApiService } from 'src/app/services/external-api.service';

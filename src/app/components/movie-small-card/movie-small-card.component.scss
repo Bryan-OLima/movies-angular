@@ -48,10 +48,33 @@
 
             font-weight: bold;
             cursor: pointer;
+            
         }
 
-        .card__like:hover {
+        .card__like:hover{
             text-shadow: 1px 2px 5px rgba(255, 255, 255, 1);
+        }
+
+        .card__favorite {
+            position: absolute;
+            margin: 355px 0 0 240px;
+            height: 2.2rem;
+            width: 2.2rem;
+            // -webkit-filter: drop-shadow(1px 1px 1px rgb(255, 112, 112))
+            // drop-shadow(-1px -1px 1px rgb(255, 112, 112));
+            // filter: drop-shadow(1px 1px 1px rgb(255, 112, 112)) 
+            // drop-shadow(-1px -1px 1px rgb(255, 112, 112));
+            filter: drop-shadow(0 0 5px #000);
+            font-size: 2rem;
+
+            color: rgb(167, 0, 0);
+
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .card__favorite:hover {
+            text-shadow: 0 0 3px $font-color;
         }
 
         .card__rating {

@@ -1,0 +1,35 @@
+<main>
+    <h1>
+        Meus Favoritos
+    </h1>
+
+    <div class="card__list fadeInLeftBig">
+        <!-- {{searchList  | json}} -->
+        <div *ngIf="favoriteList.length > 0" class="card">  
+            <div *ngFor="let media of favoriteList" class="card__small">
+                <div>
+                    <small-card
+                        *ngIf="media.original_title "
+                        [name]="media.title"
+                        [poster]='media.poster_path'
+                        [id]="media.id"
+                        [type]="media.type"
+                        [rating]="media.vote_average"
+                        [isFavorite]="true"
+                    >
+                    </small-card>
+                    <small-card
+                        *ngIf="media.original_name"
+                        [name]="media.title"
+                        [poster]='media.poster_path'
+                        [type]="media.type"
+                        [id]="media.id"
+                        [rating]="media.vote_average"
+                        [isFavorite]="true"
+                    >
+                    </small-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
