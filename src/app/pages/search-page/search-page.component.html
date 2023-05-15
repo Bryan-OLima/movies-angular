@@ -16,25 +16,25 @@
     <!-- {{searchList  | json}} -->
     <div *ngIf="searchList.length > 0" class="card">  
         <div *ngFor="let media of searchList" class="card__small">
-            <div>
-                    <small-card
-                *ngIf="media.original_title "
-                [name]="media.title"
-                [poster]="media.poster_path"
-                [id]="media.id"
-                [type]="media.type"
-                [rating]="media.vote_average"
-            >
-            </small-card>
-            <small-card
-                *ngIf="media.original_name"
-                [name]="media.title"
-                [poster]="media.poster_path"
-                [type]="media.type"
-                [id]="media.id"
-                [rating]="media.vote_average"
-            >
-            </small-card>
+                <div>
+                <small-card
+                    *ngIf="media.original_title "
+                    [name]="media.title"
+                    [poster]="media.poster_path"
+                    [id]="media.id"
+                    [type]="'movie'"
+                    [rating]="media.vote_average"
+                >
+                </small-card>
+                <small-card
+                    *ngIf="media.original_name"
+                    [name]="media.title"
+                    [poster]="media.poster_path"
+                    [type]="'tv'"
+                    [id]="media.id"
+                    [rating]="media.vote_average"
+                >
+                </small-card>
             </div>
         </div>
     </div>

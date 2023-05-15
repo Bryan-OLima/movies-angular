@@ -16,7 +16,7 @@
 
     <mat-icon 
         class="card__like"
-        (click)="okAlert(name)"
+        (click)="addCard(id, name, type)"
     >
         favorite_border
     </mat-icon>
@@ -39,7 +39,7 @@
 
     <mat-icon 
         class="card__favorite"
-        (click)="deletedAlert(name)"
+        (click)="deleteCard(internalId, name)"
     >
         favorite
     </mat-icon>

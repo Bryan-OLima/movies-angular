@@ -31,6 +31,7 @@ import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { FavoritesPageComponent } from './pages/favorites-page/favorites-page.component';
 import { DetailsPageComponent } from './pages/details-page/details-page.component';
 import { ConfirmationDialogComponent } from './components/.dialogs/confirmation-dialog/confirmation-dialog.component';
+import { AlertErrorComponent } from './components/.alerts/alert-error/alert-error.component';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { ConfirmationDialogComponent } from './components/.dialogs/confirmation-
     FavoritesComponent,
     AlertDeletedComponent,
     ConfirmationDialogComponent,
+    AlertErrorComponent,
   ],
   imports: [
     BrowserModule,

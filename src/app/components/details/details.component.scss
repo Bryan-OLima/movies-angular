@@ -22,8 +22,10 @@
         margin: 0 .3rem;
     }
 
-    
-    .media__rating, .media__actors, .media__description, .media__socials {
+    .media__rating, 
+    .media__actors, 
+    .media__description, 
+    .media__socials {
         margin: 10px 0;
     }
  
@@ -113,8 +115,6 @@
                 border: none;
                 border-radius: 20px;
 
-                // box-shadow: 0 2px 5px 3px #000;
-
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -147,32 +147,32 @@
     }
 }
 
-    //small screen
-    @media screen and (min-width: 576px){
+//small screen
+@media screen and (min-width: 576px){
 
-    }
+}
 
-    //medium screen
-    @media screen and (min-width: 768px){
+//medium screen
+@media screen and (min-width: 768px){
 
-        .media__description {
-            width: 70%;
-        }
+    .media__description {
+        width: 70%;
     }
-    
-    @media screen and (min-width: 992px){
-        .media__genres {
-            margin: 65px .3rem 0 .3rem ;
-        }
-        .footer {
-            display: block;
-            width: 100%;
-        }
-    }
+}
 
-    //extra large screen
-    @media screen and (min-width: 1505px){
-        .media__description {
-            width: 60%;
-        }
+@media screen and (min-width: 992px){
+    .media__genres {
+        margin: 65px .3rem 0 .3rem ;
     }
+    .footer {
+        display: block;
+        width: 100%;
+    }
+}
+
+//extra large screen
+@media screen and (min-width: 1505px){
+    .media__description {
+        width: 60%;
+    }
+}

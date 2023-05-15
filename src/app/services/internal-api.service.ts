@@ -24,7 +24,7 @@ export class InternalApiService {
     return this._http.post<Movie>(`${this._apiUrl}/api/media`, movie);
   }
 
-  deleteFavorite(id:number): Observable<Movie>{
-    return this._http.delete<Movie>(`${this._apiUrl}/api/media/${id}`);
+  deleteFavorite(id:number): Observable<any>{
+    return this._http.delete<any>(`${this._apiUrl}/api/media/${id}`);
   }
 }

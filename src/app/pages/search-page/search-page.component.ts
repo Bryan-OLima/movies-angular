@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Movie } from 'src/app/interfaces/movies.interface';
 import { ExternalApiService } from 'src/app/services/external-api.service';
 
 @Component({
@@ -9,8 +10,10 @@ import { ExternalApiService } from 'src/app/services/external-api.service';
 export class SearchPageComponent implements OnInit {
   searchList: any[] = [];
   searchListFiltered: any[] = [];
+  movie!: Movie;
 
-  constructor(private _externalApi: ExternalApiService){}
+  constructor(
+    private _externalApi: ExternalApiService){}
 
   ngOnInit(): void {
     this.getInitialData();
@@ -39,4 +42,11 @@ export class SearchPageComponent implements OnInit {
       }
     });
   }
+
+//   export interface Movie {
+//     internalId?: number,
+//     id: number,
+//     name: string,
+//     type: string
+// }
 }
