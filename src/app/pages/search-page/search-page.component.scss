@@ -1,23 +1,28 @@
 @import '../../../assets/css/animations.scss';
-
 :host {
     .search__area {
         display: flex;
         flex-direction: row;
         align-items: center;
         align-content: center;
+        // margin-inline: auto;
 
         width: 100%;
 
         outline: none;
-        border-bottom: solid 3px gray;
-        border-radius: 20px;
+        border: none;
+        // border-bottom: solid 3px gray;
+        // border-radius: 20px;
 
+        box-shadow: 0 5px 10px 3px black;
         background-color: #FFF;
         color: #131313;
 
         padding: 0 10px 0 0;
 
+        position: fixed;
+        
+        z-index: 3;
         button {
             background-color: transparent;
             border: none;
@@ -50,6 +55,7 @@
     .card__list {
         width: 100%;
         margin: auto;
+        padding: 40px 0 0 0;
         // padding-bottom: 20px;
         padding-right: 0;
         display: flex;
@@ -62,7 +68,7 @@
         column-gap: 1rem;
         width: 100%;
 
-        margin: 20px 0 70px 0;
+        margin: 20px 0 50px 0;
         // flex-direction: row;
         // flex-wrap: wrap;
         // align-items: center;
@@ -76,6 +82,10 @@
         color: gray;
     }
 
+    .footer {
+        display: none;
+    }
+
     //small screen
     @media screen and (min-width: 576px){
         .card {
@@ -84,18 +94,44 @@
     }
 
     //medium screen
-    @media screen and (min-width: 753px){
+    @media screen and (min-width: 768px){
         .card {
             grid-template-columns: 1fr 1fr;
         }
     }
 
-    //large screen
-    @media screen and (min-width: 1130px){
+    @media screen and (min-width: 992px){
+        .navbar {
+            z-index: 5;
+        }
+
         .card {
             grid-template-columns: 1fr 1fr 1fr;
         }
+
+        .search__area {
+            
+            position: absolute;
+        }
+        
+        .footer {
+            display: block;
+            width: 100%;
+        }
+
+        .search__area {
+            margin-top: 50px;
+            z-index: 2;
+        }
+        .card__list {
+            padding: 100px 0 0 0;
+        }
     }
+
+    // //large screen
+    // @media screen and (min-width: 1130px){
+
+    // }
 
     //extra large screen
     @media screen and (min-width: 1505px){

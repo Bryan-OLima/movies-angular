@@ -29,6 +29,7 @@ import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { FavoritesPageComponent } from './pages/favorites-page/favorites-page.component';
 import { SnackBarService } from './services/snack-bar.service';
 import { DetailsPageComponent } from './pages/details-page/details-page.component';
+import { DetailsComponent } from './components/details/details.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { DetailsPageComponent } from './pages/details-page/details-page.componen
     FavoritesPageComponent,
     AlertOkComponent,
     DetailsPageComponent,
+    DetailsComponent,
   ],
   imports: [
     BrowserModule,

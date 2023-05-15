@@ -5,19 +5,20 @@
 
     <ul class="nav__menu">
         <li class="nav__link">
-           <button type="button">
-                <a routerLink="">Inicio</a>
-           </button>
+          <button type="button">
+               <a [routerLink]="['/favoritos']">Favoritos</a>
+          </button>
+
         </li>
         <li class="nav__link">
            <button type="button">
-                <a [routerLink]="['/pesquisar']">Pesquisar</a>
+               <a [routerLink]="['/pesquisar']">Pesquisar</a>
            </button>
         </li>
         <li class="nav__link">
-            <button type="button">
-                 <a [routerLink]="['/favoritos']">Favoritos</a>
-            </button>
+          <button type="button">            
+               <a [routerLink]="['/sobre']">Sobre</a>
+          </button>
          </li>
     </ul>
 </nav>

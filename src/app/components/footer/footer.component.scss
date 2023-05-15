@@ -4,9 +4,10 @@
     //mobile first
     width: 100vw;
 
-    position: fixed;
+    position: relative;
     bottom: 0;
 
+    display: none;
     nav {
         display: flex;
         flex-direction: row;
@@ -63,6 +64,5 @@
 
     //large screen
     @media screen and (min-width: 992px){
-    
     }
 }
