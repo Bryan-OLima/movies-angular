@@ -70,7 +70,6 @@ export class MovieSmallCardComponent implements OnChanges {
     }
     this._internalService.getFavorites().subscribe({
       next: (res) => {
-        // debugger
         this.list = res.result;
         if(this.list.some((e:any) => e.id == this.movie.id)){
           this.duplicateAlert(name);

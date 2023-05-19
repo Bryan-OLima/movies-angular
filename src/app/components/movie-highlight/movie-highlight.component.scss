@@ -2,9 +2,7 @@
 @import '../../../assets/css/animations.scss';
 
 :host {
-    //mobile first
     font-size: 1rem;
-
 
     .bg {
         background-repeat: no-repeat;
@@ -23,7 +21,6 @@
         left: 0;
 
         filter: blur(10px);   
-        // filter: brightness(0.9);
     }
         
     main {
@@ -33,7 +30,6 @@
         justify-content: center;
         position: absolute;
         top: 0;
-        // left: calc(2.5%);
 
         margin: 15vh 20px 0 20px;
         height: 490px;
@@ -93,8 +89,6 @@
         }
     }
 
-
-
     //small screen
     @media screen and (min-width: 576px){
 
@@ -127,7 +121,6 @@
         .bg {
             background-image: url('https://image.tmdb.org/t/p/w500/e7FzphKs5gzoghDotAEp2FeP46u.jpg');
             filter: blur(20px);
-            // filter: brightness(0.5);
         }
 
         .info {

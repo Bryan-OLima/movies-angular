@@ -81,7 +81,6 @@ export class DetailsComponent implements OnInit{
     }
     this._internalService.getFavorites().subscribe({
       next: (res) => {
-        // debugger
         this.list = res.result;
         if(this.list.some((e:any) => e.id == this.movie.id)){
           this.duplicateAlert(name);
@@ -90,9 +89,7 @@ export class DetailsComponent implements OnInit{
           this._internalService.setFavorite(this.movie).subscribe({
             next: () => {
               this.okAlert(name);
-              setTimeout(() => {
                 location.reload();
-              }, 1500);
             },
             error: (res) => {
               console.log(res, 'erro!');

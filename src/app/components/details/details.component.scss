@@ -1,5 +1,4 @@
 @import '../../../assets/css/colors.scss';
-// @import url('hhttps://fonts.googleapis.com/css2?family=Poppins:wgt@500&display=swap');
 :host {
     display: flex;
     flex-direction: column;
@@ -84,9 +83,7 @@
             align-items: center;
             
             span {
-                // background-color: $background-color;
                 padding: 6px;
-                // border-radius: 8px;
             }
 
             .media__trailer {
@@ -124,7 +121,6 @@
                 span {
                     margin: 0 15px 0 5px;
                     font-size: 1.1rem;
-                    // font-weight: 500;
                 }
 
                 .play, .like {
