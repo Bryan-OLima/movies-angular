@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { ExternalApiService } from 'src/app/services/external-api.service';
 import { InternalApiService } from 'src/app/services/internal-api.service';
 
@@ -7,7 +7,7 @@ import { InternalApiService } from 'src/app/services/internal-api.service';
   templateUrl: './favorites.component.html',
   styleUrls: ['./favorites.component.scss']
 })
-export class FavoritesComponent implements OnInit {
+export class FavoritesComponent implements OnInit, OnChanges {
   public favoriteList: Array<any> = []; 
   public internalList: Array<any> = [];
 
@@ -19,6 +19,10 @@ export class FavoritesComponent implements OnInit {
   ngOnInit():void {
     this.getFavoriteList();
     this.getCardInfo();
+  }
+
+  ngOnChanges():void {
+    // console.log(this.favoriteList);
   }
 
   public getCardInfo() {

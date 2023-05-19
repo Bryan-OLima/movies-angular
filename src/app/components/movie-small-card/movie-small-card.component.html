@@ -5,7 +5,14 @@
 <div *ngIf="!isFavorite" class="card">
     <a [routerLink]="['/detalhes', id]">
         <img 
+            *ngIf="posterLink != 'https://imdb-api.com/images/original/nopicture.jpg'"
             [src]="posterLink+poster" 
+            [alt]="name+ id"
+            class="card__image"
+        />
+        <img 
+            *ngIf="posterLink == 'https://imdb-api.com/images/original/nopicture.jpg'"
+            [src]="posterLink" 
             [alt]="name+ id"
             class="card__image"
         />
@@ -14,7 +21,16 @@
         {{name}}
     </span>
 
+    <!-- <mat-icon 
+        *ngIf="posterLink == 'https://imdb-api.com/images/original/nopicture.jpg'"
+        class="card__like"
+        (click)="addCard(id, name, type)"
+    >
+        favorite_border
+    </mat-icon> -->
+
     <mat-icon 
+        *ngIf="posterLink != 'https://imdb-api.com/images/original/nopicture.jpg'"
         class="card__like"
         (click)="addCard(id, name, type)"
     >
@@ -28,7 +44,14 @@
 <div *ngIf="isFavorite" class="card">
     <a [routerLink]="['/detalhes', id]">
         <img 
+            *ngIf="posterLink != 'https://imdb-api.com/images/original/nopicture.jpg'"
             [src]="posterLink+poster" 
+            [alt]="name+ id"
+            class="card__image"
+        />
+        <img 
+            *ngIf="posterLink == 'https://imdb-api.com/images/original/nopicture.jpg'"
+            [src]="posterLink" 
             [alt]="name+ id"
             class="card__image"
         />

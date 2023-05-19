@@ -53,7 +53,7 @@ export class MovieSmallCardComponent implements OnChanges {
 
         setTimeout(() => {
           location.reload();
-        }, 2000);
+        }, 500);
       },
 
       error: (res) => {
@@ -68,7 +68,6 @@ export class MovieSmallCardComponent implements OnChanges {
       name,
       type
     }
-
     this._internalService.getFavorites().subscribe({
       next: (res) => {
         // debugger
@@ -78,7 +77,6 @@ export class MovieSmallCardComponent implements OnChanges {
         } else {
           this._internalService.setFavorite(this.movie).subscribe({
             next: () => {
-              console.log('Filme adicionado')
               this.okAlert(name);
             },
             error: (res) => {
@@ -93,13 +91,13 @@ export class MovieSmallCardComponent implements OnChanges {
     });
   }
 
-
-
-
-
-
-
-
+  getData(){
+    this._internalService.getFavorites().subscribe({
+      next: (res) => {
+        this.list = res.result;
+      }
+    })
+  }
 
   private okAlert(name:string){
     this._snackBar.openFromComponent(AlertOkComponent, {duration: 2000, data: name});

@@ -26,6 +26,7 @@ export class SearchPageComponent implements OnInit {
       this._externalApi.searchMoviesAndTv(search).subscribe({
         next: (res: any) => {
          this.searchList = res.results;
+         console.log(this.searchList = res.results);
         },
         error: () => {
         }

@@ -1,0 +1,93 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    nav-bar {
+        margin: 0;
+        position: absolute;
+        left: 0;
+    }
+
+    hr {
+        width: 100%;
+
+        opacity: .5;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        width: 90%;
+
+        padding-top: 20px;
+
+        h1 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        margin: 70px 0 100px 0;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .technologies {
+
+        margin: 100px 0 100px 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .technologies__logos{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            flex-wrap: wrap;
+            .logo {
+                height: 9rem;
+                width: 9rem;
+                border-radius: 50%;
+
+                margin: 0 10px;
+
+                box-shadow: 5px 4px 5px 3px rgba(0, 0, 0, 0.9);
+
+                transition: 300ms;
+
+                cursor: pointer;
+            }
+
+            .logo:hover {
+                transition: 500ms;
+                box-shadow: 5px 4px 10px 6px rgba(0,0,0, 0.9);
+            }
+        }
+    }
+
+    .team {
+        margin: 100px 0 100px 0;
+    }
+}
+
+@media screen and (min-width: 992px){
+    h1 {
+        margin: 30px 15px 15px 15px;
+    }
+    
+    .team {
+        margin: 100px 0 30px 0;
+    }
+}
