@@ -3,6 +3,8 @@ import { AlertOkComponent } from '../.alerts/alert-ok/alert-ok.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { ExternalApiService } from 'src/app/services/external-api.service';
+import { InternalApiService } from 'src/app/services/internal-api.service';
+import { AlertErrorComponent } from '../.alerts/alert-error/alert-error.component';
 
 @Component({
   selector: 'app-details',
@@ -16,10 +18,13 @@ export class DetailsComponent implements OnInit{
   movie: any;
   youtubeKey: string = '';
 
+  list: any;
+
   constructor(
     private _snackBar: MatSnackBar,
     private _activatedRoute: ActivatedRoute,
     private _externalApi: ExternalApiService,
+    private _internalService: InternalApiService
   ) {}
 
   ngOnInit(): void {
@@ -68,8 +73,44 @@ export class DetailsComponent implements OnInit{
     });
   }
 
-  openAlert(name:string){
+  favoriteMedia(id: string, name: string, type: string){
+    this.movie = {
+      id: Number(id),
+      name,
+      type
+    }
+    this._internalService.getFavorites().subscribe({
+      next: (res) => {
+        // debugger
+        this.list = res.result;
+        if(this.list.some((e:any) => e.id == this.movie.id)){
+          this.duplicateAlert(name);
+            location.reload();
+        } else {
+          this._internalService.setFavorite(this.movie).subscribe({
+            next: () => {
+              this.okAlert(name);
+              setTimeout(() => {
+                location.reload();
+              }, 1500);
+            },
+            error: (res) => {
+              console.log(res, 'erro!');
+            }
+          });
+        }
+      },
+      error: (res) => {
+        console.log(res.error);
+      }
+    });
+  }
+
+  private okAlert(name:string){
     this._snackBar.openFromComponent(AlertOkComponent, {duration: 2000, data: name});
+  }
+  private duplicateAlert(name: string){
+    this._snackBar.openFromComponent(AlertErrorComponent, {duration: 3000, data: name });
   }
 }
 

@@ -23,7 +23,7 @@
         {{ genre.name }}
     </button>
 </div>
-
+    <!-- {{ movie | json }} -->
 <div class="media">
     <div class="media__header">
         <h1>
@@ -55,7 +55,7 @@
         <div class="media__like">
             <button 
                 class="bg"
-                (click)="openAlert(movie.title)"
+                (click)="favoriteMedia(movie?.id, movie?.title, 'media')"
             > 
                 <mat-icon class="like">
                     favorite_border
