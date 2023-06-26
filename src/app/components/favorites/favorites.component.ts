@@ -22,7 +22,6 @@ export class FavoritesComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges():void {
-    // console.log(this.favoriteList);
   }
 
   public getCardInfo() {
@@ -35,7 +34,7 @@ export class FavoritesComponent implements OnInit, OnChanges {
     this._externalService.getMovieById(id).subscribe({
       next: (res) => {
         this.favoriteList.push(res);
-        console.log(this.favoriteList);
+        // console.log(this.favoriteList);
       },
       error: (res) => {
         console.error(`erro: ${res}`);
@@ -47,7 +46,7 @@ export class FavoritesComponent implements OnInit, OnChanges {
     this._internalService.getFavorites().subscribe({
       next: (res) => {
         this.internalList = res.result;
-        console.log(this.internalList);
+        // console.log(this.internalList);
         this.getCardInfo();
       },
       error: (res) => {
